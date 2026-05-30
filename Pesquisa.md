@@ -23,10 +23,10 @@ A diferença de performance entre os métodos de comunicação assíncrona é m�
 Embora existam diferenças técnicas em como cada um é processado pelo motor do navegador, o impacto no tempo final de resposta para o usuário é desprezível. O tempo de execução de qualquer uma dessas funções é medido em microssegundos, enquanto o tempo gasto com a rede e o processamento do servidor representa a vasta maioria do atraso percebido. Portanto, para o desenvolvimento de aplicações web, a escolha do método não altera significativamente a performance da aplicação.
 
 ## 4. Facilidade de Uso e Legibilidade
-A diferença real entre as abordagens está na manutenção e na clareza do código escrito.
+A diferença real entre as abordagens está naclareza do código.
 
 ### XMLHttpRequest
-Apresenta baixa legibilidade. Exige a escrita de muitas linhas de código para operações simples, além da necessidade de monitorar manualmente os códigos de estado (readyState == 4 e status == 200). Quando há requisições dependentes em sequência, o código tende a se tornar confuso rapidamente (Callback Hell).
+A legibilidade é pobre. Exige a escrita de muitas linhas de código para operações simples, além da necessidade de monitorar manualmente os códigos de estado (readyState == 4 e status == 200). Quando há requisições dependentes em sequência, o código tende a se tornar confuso rapidamente (Callback Hell).
 
 ### Promises
 Corrigiram os problemas de aninhamento do XHR ao introduzir o encadeamento com o método .then(). O fluxo de execução passa a ser lido de forma estritamente vertical. Caso ocorra uma falha em qualquer etapa do processo, a execução é desviada diretamente para o bloco .catch() no final.
