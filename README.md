@@ -40,12 +40,6 @@ Tornou o consumo de dados mais intuitivo, pois o navegador fornece a função fe
 ### Async/Await
 É o padrão mais utilizado no desenvolvimento moderno. Em vez de encadear métodos .then(), utiliza-se a palavra-chave await antes da requisição, fazendo com que o JavaScript aguarde a resolução da linha antes de prosseguir. O código se torna mais limpo e o tratamento de erros utiliza a estrutura try/catch, comum em diversas linguagens de programação.
 
-## Referências
-[^1]: [Mina Criativa. O que é: XMLHttpRequest (Requisição XMLHttp).](https://minacriativa.com.br/glossario/o-que-e-xmlhttprequest-requisicao-xmlhttp/)
-[^2]: [MDN Web Docs. Usando Fetch - APIs da Web.](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API/Using_Fetch)
-[^3]: [MDN Web Docs. Usando promises - JavaScript.](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Using_promises)
-[^4]: [Baradel, L. Async/await: funções assíncronas no Javascript! Medium.](https://lucasbaradel.medium.com/async-await-fun%C3%A7%C3%B5es-ass%C3%ADncronas-no-javascript-85768f3460fa)
-
 ### Alunos:
 - Pedro Henrique Coelho Lima;
 - Douglas Rocha Vasco; 
@@ -53,3 +47,9 @@ Tornou o consumo de dados mais intuitivo, pois o navegador fornece a função fe
 - Jonas Santos Barbosa; 
 - Calebe Bezerra Feitosa;  
 - Tiago de Andrade Lima;
+
+## Referências
+[^1]: [Mina Criativa. O que é: XMLHttpRequest (Requisição XMLHttp).](https://minacriativa.com.br/glossario/o-que-e-xmlhttprequest-requisicao-xmlhttp/)
+[^2]: [MDN Web Docs. Usando Fetch - APIs da Web.](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API/Using_Fetch)
+[^3]: [MDN Web Docs. Usando promises - JavaScript.](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Using_promises)
+[^4]: [Baradel, L. Async/await: funções assíncronas no Javascript! Medium.](https://lucasbaradel.medium.com/async-await-fun%C3%A7%C3%B5es-ass%C3%ADncronas-no-javascript-85768f3460fa)
