@@ -1,3 +1,11 @@
+### Alunos:
+- Pedro Henrique Coelho Lima;
+- Douglas Rocha Vasco; 
+- Raphael Alves Mendes; 
+- Jonas Santos Barbosa; 
+- Calebe Bezerra Feitosa;  
+- Tiago de Andrade Lima;
+
 # Comparação: XHR, Fetch, Promises e Async/Await
 
 ## 1. Conceitos Fundamentais
@@ -39,14 +47,6 @@ Tornou o consumo de dados mais intuitivo, pois o navegador fornece a função fe
 
 ### Async/Await
 É o padrão mais utilizado no desenvolvimento moderno. Em vez de encadear métodos .then(), utiliza-se a palavra-chave await antes da requisição, fazendo com que o JavaScript aguarde a resolução da linha antes de prosseguir. O código se torna mais limpo e o tratamento de erros utiliza a estrutura try/catch, comum em diversas linguagens de programação.
-
-### Alunos:
-- Pedro Henrique Coelho Lima;
-- Douglas Rocha Vasco; 
-- Raphael Alves Mendes; 
-- Jonas Santos Barbosa; 
-- Calebe Bezerra Feitosa;  
-- Tiago de Andrade Lima;
 
 ## Referências
 [^1]: [Mina Criativa. O que é: XMLHttpRequest (Requisição XMLHttp).](https://minacriativa.com.br/glossario/o-que-e-xmlhttprequest-requisicao-xmlhttp/)
