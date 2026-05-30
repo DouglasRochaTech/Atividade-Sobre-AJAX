@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="demo">
+    <h1>Consumo de API com Async/Await</h1>
+    <input type="text" name="cep" id="cep" placeholder="Digite seu CEP">
+    <button type="button" onclick="loadDoc()">Pesquisar CEP</button>
+    <br>
+    <input type="text" id="logradouro" placeholder="Logradouro">
+    <br>
+    <input type="text" id="complemento" placeholder="Complemento">
+    <br>
+    <input type="text" id="bairro" placeholder="Bairro">
+    <br>
+    <input type="text" id="localidade" placeholder="Cidade">
+    <br>
+    <input type="text" id="uf" placeholder="UF">
+</div>
+
+<script>
+// A palavra-chave 'async' indica que a função gerencia operações assíncronas
+async function loadDoc() {
+  // Obtém o CEP digitado
+  const cep = parseInt(document.getElementById("cep").value); 
+  const url = `https://viacep.com.br/ws/${cep}/json`;
+
+  // O bloco try/catch substitui o .catch() das Promises para tratar erros
+  try {
+    // 'await' pausa a execução da função até que a Promise do fetch seja resolvida
+    const response = await fetch(url);
+
+    // Verifica se a resposta HTTP está ok (status 200-299)
+    if (!response.ok) {
+      throw new Error(`Erro HTTP: ${response.status}`);
+    }
+
+    // 'await' pausa novamente para esperar a conversão do texto bruto em objeto JSON
+    const endereco = await response.json();
+
+    console.log('Dados do endereço recebidos:', endereco);
+
+    // Se o CEP não existir, a API do ViaCEP retorna um objeto contendo "erro: true"
+    if (endereco.erro) {
+      alert("CEP não encontrado!");
+      return;
+    }
+
+    // Preenche os campos do HTML
+    document.getElementById("logradouro").value = endereco.logradouro || "";
+    document.getElementById("complemento").value = endereco.complemento || "";
+    document.getElementById("bairro").value = endereco.bairro || "";
+    document.getElementById("localidade").value = endereco.localidade || "";
+    document.getElementById("uf").value = endereco.uf || "";
+
+  } catch (error) {
+    // Captura qualquer erro de rede ou erros lançados manualmente no bloco try
+    console.error('Falha na requisição:', error);
+    alert("Erro ao buscar o CEP. Verifique a conexão ou o número digitado.");
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="demo">
+    <h1>Comunicação Assíncrona com Fetch!</h1>
+    <input type="text" name="cep" id="cep" placeholder="Digite seu CEP">
+    <button type="button" onclick="loadDoc()">Pesquisar CEP</button>
+    <br>
+    <input type="text" id="logradouro" placeholder="Logradouro">
+    <br>
+    <input type="text" id="complemento" placeholder="Complemento">
+    <br>
+    <input type="text" id="bairro" placeholder="Bairro">
+    <br>
+    <input type="text" id="localidade" placeholder="Cidade">
+    <br>
+    <input type="text" id="uf" placeholder="UF">
+</div>
+
+<script>
+function loadDoc() {
+  // Obtém o CEP digitado
+  let cep = parseInt(document.getElementById("cep").value); 
+  
+  // Faz a requisição HTTP usando fetch
+  fetch("https://viacep.com.br/ws/" + cep + "/json")
+    .then(response => {
+      // Verifica se a resposta do servidor foi bem-sucedida (status 200-299)
+      if (!response.ok) {
+        throw new Error('Erro na requisição');
+      }
+      // Converte a resposta bruta em JSON (retorna outra Promise)
+      return response.json(); 
+    })
+    .then(endereco => {
+      // Esta parte só executa quando o JSON estiver totalmente pronto
+      console.log('Resposta recebida com sucesso:', endereco);
+      
+      // Preenche os campos do HTML com os dados do objeto
+      document.getElementById("logradouro").value = endereco.logradouro || "";
+      document.getElementById("complemento").value = endereco.complemento || "";
+      document.getElementById("bairro").value = endereco.bairro || "";
+      document.getElementById("localidade").value = endereco.localidade || "";
+      document.getElementById("uf").value = endereco.uf || "";
+    })
+    .catch(error => {
+      // Captura qualquer erro que ocorra no meio do caminho (rede, CEP inválido, etc.)
+      console.error('Ocorreu um problema com o fetch:', error);
+    });
+}
+</script>
+
+</body>
+</html>
